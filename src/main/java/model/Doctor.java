@@ -9,6 +9,11 @@ public class Doctor extends Employee{
         this.options = new Option[] {};
     }
 
+    @Override
+    public int getJob() {
+        return 0;
+    }
+
     public String getSpecialization() {
         return specialization;
     }

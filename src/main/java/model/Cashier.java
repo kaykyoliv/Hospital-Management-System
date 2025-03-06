@@ -6,4 +6,9 @@ public class Cashier extends Employee{
         super();
         this.options = new Option[] {};
     }
+
+    @Override
+    public int getJob() {
+        return 1;
+    }
 }
