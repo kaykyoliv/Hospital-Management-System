@@ -1,5 +1,6 @@
 package model;
 
+
 public class Employee extends User{
 
     private double salary;
