@@ -1,5 +1,6 @@
 package view;
 
+import controller.CreateEmployee;
 import model.*;
 
 import java.util.Scanner;
@@ -44,6 +45,7 @@ public class addNewEmployee implements Option {
                 employee.setEmail(email);
                 employee.setPhoneNumber(phoneNumber);
                 employee.setPassword(password);
+                employee.setSalary(salary);
                 break;
             case 2:
                 employee = new Receptionist();
@@ -52,7 +54,19 @@ public class addNewEmployee implements Option {
                 employee.setEmail(email);
                 employee.setPhoneNumber(phoneNumber);
                 employee.setPassword(password);
+                employee.setSalary(salary);
             break;
+            default:
+                employee = new Employee() {
+                    @Override
+                    public int getJob() {
+                        return -1;
+                    }
+                };
+        }
+
+        if(new CreateEmployee(employee, database).isCreated()){
+            System.out.println("Employee add successfully");
         }
     }
 
