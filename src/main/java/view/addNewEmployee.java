@@ -31,13 +31,29 @@ public class addNewEmployee implements Option {
 
         int job;
         do{
-            System.out.println("Enter job title: \n1. Cashier, \n2. Receptionist");
+            System.out.println("Enter job title: \n0. Doctor, \n1. Cashier, \n2. Receptionist");
             job = sc.nextInt();
         } while(job < 0 || job > 2);
+
+        String specialization = "";
+        if(job == 0){
+            System.out.println("Enter specialization");
+            specialization = sc.next();
+        }
 
         Employee employee;
 
         switch (job){
+            case 0:
+                employee = new Doctor();
+                employee.setFirstName(firstName);
+                employee.setLastName(lastName);
+                employee.setEmail(email);
+                employee.setPhoneNumber(phoneNumber);
+                employee.setPassword(password);
+                employee.setSalary(salary);
+                ((Doctor) employee).setSpecialization(specialization);
+                break;
             case 1:
                 employee = new Cashier();
                 employee.setFirstName(firstName);
@@ -61,6 +77,11 @@ public class addNewEmployee implements Option {
                     @Override
                     public void showList(Scanner sc, Database database) {
                         System.out.println("Unknown job!");
+                    }
+
+                    @Override
+                    public String getJobToString() {
+                        return "Unknown job!";
                     }
 
                     @Override

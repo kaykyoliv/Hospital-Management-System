@@ -10,12 +10,12 @@ public class Cashier extends Employee{
     }
 
     @Override
-    public void showList(Scanner sc, Database database) {
-
+    public int getJob() {
+        return 1;
     }
 
     @Override
-    public int getJob() {
-        return 1;
+    public String getJobToString() {
+        return "Cashier";
     }
 }

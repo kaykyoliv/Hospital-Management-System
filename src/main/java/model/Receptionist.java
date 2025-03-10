@@ -19,4 +19,9 @@ public class Receptionist extends Employee{
     public int getJob() {
         return 2;
     }
+
+    @Override
+    public String getJobToString() {
+        return "Receptionist";
+    }
 }

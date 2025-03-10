@@ -1,64 +1,58 @@
 package controller;
 
-import model.Cashier;
-import model.Database;
-import model.Employee;
-import model.Receptionist;
+import model.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ReadEmployee {
 
-    private ArrayList<Employee> employees;
+    private Employee e;
 
-    public ReadEmployee(Database database) {
-        String select = "SELECT * FROM employee";
-        employees = new ArrayList<>();
-
+    public ReadEmployee(int ID, Database database) {
+        String select = "SELECT * FROM employee WHERE id = '" + ID + "'";
         try (ResultSet rs = database.getStatement().executeQuery(select)) {
-            while (rs.next()) {
-                Employee e;
-                int job = rs.getInt("job");
-                switch (job) {
-                    case 1:
-                        e = new Cashier();
-                        break;
-                    case 2:
-                        e = new Receptionist();
-                        break;
-                    default:
-                        e = new Employee() {
-                            @Override
-                            public void showList(Scanner sc, Database database) {
-                                System.out.println("Unknown job!");
-                            }
 
-                            @Override
-                            public int getJob() {
-                                return -1;
-                            }
-                        };
-                }
-                e.setID(rs.getInt("id"));
-                e.setFirstName(rs.getString("first_name"));
-                e.setLastName(rs.getString("last_name"));
-                e.setEmail(rs.getString("email"));
-                e.setPassword(rs.getString("password"));
-                e.setPhoneNumber(rs.getString("phone_number"));
-                e.setSalary(rs.getDouble("salary"));
-                employees.add(e);
+            int job = rs.getInt("job");
+            switch (job) {
+                case 0:
+                    e = new Doctor();
+                    ((Doctor) e).setSpecialization(rs.getString("specialization"));
+                    break;
+                case 1:
+                    e = new Cashier();
+                    break;
+                case 2:
+                    e = new Receptionist();
+                    break;
+                default:
+                    e = new Employee() {
+                        @Override
+                        public int getJob() {
+                            return -1;
+                        }
+
+                        @Override
+                        public String getJobToString() {
+                            return null;
+                        }
+                    };
             }
+            e.setID(rs.getInt("id"));
+            e.setFirstName(rs.getString("first_name"));
+            e.setLastName(rs.getString("last_name"));
+            e.setEmail(rs.getString("email"));
+            e.setPassword(rs.getString("password"));
+            e.setPhoneNumber(rs.getString("phone_number"));
+            e.setSalary(rs.getDouble("salary"));
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public ArrayList<Employee> getEmployees(){
-        return employees;
+    public Employee getEmployee(){
+        return e;
     }
-
-
 }

@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Scanner;
-
 public class Doctor extends Employee{
 
     private String specialization;
@@ -14,6 +12,11 @@ public class Doctor extends Employee{
     @Override
     public int getJob() {
         return 0;
+    }
+
+    @Override
+    public String getJobToString() {
+        return "Doctor";
     }
 
     public String getSpecialization() {

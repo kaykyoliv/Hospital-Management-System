@@ -27,6 +27,10 @@ public class Login {
             if(loggedIn){
                 int job = rs.getInt("job");
                 switch (job) {
+                    case 0:
+                        u = new Doctor();
+                        ((Doctor) u).setSpecialization(rs.getString("specialization"));
+                        break;
                     case 1:
                         u = new Cashier();
                         break;

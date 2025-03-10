@@ -19,4 +19,6 @@ public abstract class Employee extends User{
 
     public abstract int getJob();
 
+    public abstract String getJobToString();
+
 }
