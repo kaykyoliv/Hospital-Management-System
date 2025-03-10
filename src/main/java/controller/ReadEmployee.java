@@ -4,7 +4,6 @@ import model.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
 
 public class ReadEmployee {
 
@@ -14,6 +13,7 @@ public class ReadEmployee {
         String select = "SELECT * FROM employee WHERE id = '" + ID + "'";
         try (ResultSet rs = database.getStatement().executeQuery(select)) {
 
+            rs.next();
             int job = rs.getInt("job");
             switch (job) {
                 case 0:
@@ -52,7 +52,7 @@ public class ReadEmployee {
         }
     }
 
-    public Employee getEmployee(){
+    public Employee getEmployee() {
         return e;
     }
 }

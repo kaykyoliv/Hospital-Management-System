@@ -19,12 +19,12 @@ public class Login {
         this.database = database;
     }
 
-    public boolean isLoggedIn(){
+    public boolean isLoggedIn() {
         boolean loggedIn = false;
         String select = "SELECT * FROM employee WHERE email = '" + email + "' AND password = '" + password + "'";
-        try(ResultSet rs = database.getStatement().executeQuery(select)){
+        try (ResultSet rs = database.getStatement().executeQuery(select)) {
             loggedIn = rs.next();
-            if(loggedIn){
+            if (loggedIn) {
                 int job = rs.getInt("job");
                 switch (job) {
                     case 0:
@@ -52,13 +52,13 @@ public class Login {
                 u.setPassword(rs.getString("password"));
                 u.setPhoneNumber(rs.getString("phone_number"));
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return loggedIn;
     }
 
-    public User getUser(){
+    public User getUser() {
         return u;
     }
 }

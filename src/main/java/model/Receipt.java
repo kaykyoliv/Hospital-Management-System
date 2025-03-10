@@ -11,7 +11,7 @@ public class Receipt {
     //1 ==> Report
     private int typeID; //Operation/Report ID
 
-    public Receipt(){
+    public Receipt() {
     }
 
     public int getID() {

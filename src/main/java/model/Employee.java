@@ -1,11 +1,11 @@
 package model;
 
 
-public abstract class Employee extends User{
+public abstract class Employee extends User {
 
     private double salary;
 
-    public Employee(){
+    public Employee() {
         super();
     }
 

@@ -5,7 +5,6 @@ import model.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class ReadEmployees {
 
@@ -58,7 +57,7 @@ public class ReadEmployees {
         }
     }
 
-    public ArrayList<Employee> getEmployees(){
+    public ArrayList<Employee> getEmployees() {
         return employees;
     }
 

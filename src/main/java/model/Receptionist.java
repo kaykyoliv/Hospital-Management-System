@@ -1,17 +1,17 @@
 package model;
 
+import view.EditEmployee;
 import view.addNewEmployee;
 import view.viewEmployee;
 
-import java.util.Scanner;
-
-public class Receptionist extends Employee{
+public class Receptionist extends Employee {
 
     public Receptionist() {
         super();
-        this.options = new Option[] {
+        this.options = new Option[]{
                 new addNewEmployee(),
-                new viewEmployee()
+                new viewEmployee(),
+                new EditEmployee()
         };
     }
 

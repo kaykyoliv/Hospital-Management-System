@@ -11,9 +11,9 @@ public class Patient extends User {
     private ArrayList<Operation> unpaidOperations;
     private ArrayList<Report> unpaidReports;
 
-    public Patient(){
+    public Patient() {
         super();
-        this.options = new Option[] {};
+        this.options = new Option[]{};
     }
 
     public String getBloodGroup() {
@@ -28,11 +28,11 @@ public class Patient extends User {
         return operations;
     }
 
-    public void addOperation(Operation operation){
+    public void addOperation(Operation operation) {
         operations.add(operation);
     }
 
-    public void removeOperation(Operation operation){
+    public void removeOperation(Operation operation) {
         operations.remove(operation);
     }
 
@@ -40,22 +40,23 @@ public class Patient extends User {
         return reports;
     }
 
-    public void addReport(Report report){
+    public void addReport(Report report) {
         reports.add(report);
     }
 
-    public void removeReport(Report report){
+    public void removeReport(Report report) {
         reports.remove(report);
     }
+
     public ArrayList<Operation> getUnpaidOperations() {
         return unpaidOperations;
     }
 
-    public void addUnpaidOperations(Operation operation){
+    public void addUnpaidOperations(Operation operation) {
         unpaidOperations.add(operation);
     }
 
-    public void removeUnpaidOperations(Operation operation){
+    public void removeUnpaidOperations(Operation operation) {
         unpaidOperations.remove(operation);
     }
 
@@ -63,11 +64,11 @@ public class Patient extends User {
         return unpaidReports;
     }
 
-    public void addUnpaidReports(Report report){
+    public void addUnpaidReports(Report report) {
         unpaidReports.add(report);
     }
 
-    public void removeUnpaidReports(Report report){
+    public void removeUnpaidReports(Report report) {
         unpaidReports.remove(report);
     }
 }

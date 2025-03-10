@@ -14,7 +14,7 @@ public class Report {
     private String diagnosis;
     private String treatment;
 
-    public Report(){
+    public Report() {
     }
 
     public int getID() {

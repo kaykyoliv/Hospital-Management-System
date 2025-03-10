@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Login {
 
-    public Login(Scanner sc, Database database){
+    public Login(Scanner sc, Database database) {
         System.out.println("Welcome to hospital management system");
         System.out.println("Enter email: ");
         String email = sc.next();
@@ -14,9 +14,9 @@ public class Login {
         String password = sc.next();
 
         controller.Login login = new controller.Login(email, password, database);
-        if(login.isLoggedIn()){
+        if (login.isLoggedIn()) {
             login.getUser().showList(sc, database);
-        }else{
+        } else {
             System.out.println("Wrong email or password");
         }
     }

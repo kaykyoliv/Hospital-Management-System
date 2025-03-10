@@ -13,7 +13,7 @@ public class Operation {
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM:dd:yyyy HH:mm:ss");
     private String diagnosis;
 
-    public Operation(){
+    public Operation() {
     }
 
     public int getID() {

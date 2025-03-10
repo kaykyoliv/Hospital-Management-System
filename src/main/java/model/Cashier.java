@@ -1,12 +1,10 @@
 package model;
 
-import java.util.Scanner;
+public class Cashier extends Employee {
 
-public class Cashier extends Employee{
-
-    public Cashier (){
+    public Cashier() {
         super();
-        this.options = new Option[] {};
+        this.options = new Option[]{};
     }
 
     @Override

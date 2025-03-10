@@ -21,29 +21,29 @@ public class addNewEmployee implements Option {
         System.out.println("Enter password: ");
         String password = sc.next();
         String confirmPassword;
-        do{
+        do {
             System.out.println("Confirm password: ");
-            confirmPassword  = sc.next();
-        } while(!password.equals(confirmPassword));
+            confirmPassword = sc.next();
+        } while (!password.equals(confirmPassword));
 
         System.out.println("Enter salary: ");
         double salary = sc.nextDouble();
 
         int job;
-        do{
+        do {
             System.out.println("Enter job title: \n0. Doctor, \n1. Cashier, \n2. Receptionist");
             job = sc.nextInt();
-        } while(job < 0 || job > 2);
+        } while (job < 0 || job > 2);
 
         String specialization = "";
-        if(job == 0){
+        if (job == 0) {
             System.out.println("Enter specialization");
             specialization = sc.next();
         }
 
         Employee employee;
 
-        switch (job){
+        switch (job) {
             case 0:
                 employee = new Doctor();
                 employee.setFirstName(firstName);
@@ -71,7 +71,7 @@ public class addNewEmployee implements Option {
                 employee.setPhoneNumber(phoneNumber);
                 employee.setPassword(password);
                 employee.setSalary(salary);
-            break;
+                break;
             default:
                 employee = new Employee() {
                     @Override
@@ -91,7 +91,7 @@ public class addNewEmployee implements Option {
                 };
         }
 
-        if(new CreateEmployee(employee, database).isCreated()){
+        if (new CreateEmployee(employee, database).isCreated()) {
             System.out.println("Employee add successfully");
         }
     }
