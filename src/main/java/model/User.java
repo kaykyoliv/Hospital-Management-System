@@ -1,7 +1,9 @@
 package model;
 
+import java.util.Scanner;
+
 public class User {
-    
+
     private int ID;
     private String firstName;
     private String lastName;
@@ -10,7 +12,7 @@ public class User {
     private String password;
     protected Option[] options;
 
-    public User(){
+    public User() {
     }
 
     public User(int ID, String firstName, String lastName, String email, String phoneNumber, String password) {
@@ -68,5 +70,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void showList(Scanner sc, Database database) {
+        for (int i = 1; i <= options.length; i++) {
+            System.out.println(i + ". " + options[i - 1].getName());
+        }
+        int select = sc.nextInt();
+        options[select - 1].operation(sc, database, this);
+        showList(sc, database);
     }
 }

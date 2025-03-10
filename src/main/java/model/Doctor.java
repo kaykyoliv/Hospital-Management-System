@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Scanner;
+
 public class Doctor extends Employee{
 
     private String specialization;

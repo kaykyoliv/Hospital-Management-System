@@ -8,13 +8,14 @@ import model.Receptionist;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ReadEmployee {
 
     private ArrayList<Employee> employees;
 
     public ReadEmployee(Database database) {
-        String select = "SELECT * FROM employees";
+        String select = "SELECT * FROM employee";
         employees = new ArrayList<>();
 
         try (ResultSet rs = database.getStatement().executeQuery(select)) {
@@ -30,6 +31,11 @@ public class ReadEmployee {
                         break;
                     default:
                         e = new Employee() {
+                            @Override
+                            public void showList(Scanner sc, Database database) {
+                                System.out.println("Unknown job!");
+                            }
+
                             @Override
                             public int getJob() {
                                 return -1;

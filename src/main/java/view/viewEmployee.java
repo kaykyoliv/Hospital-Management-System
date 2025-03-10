@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class viewEmployee implements Option {
     @Override
-    public void Operation(Scanner sc, Database database, User user) {
+    public void operation(Scanner sc, Database database, User user) {
         ArrayList<Employee> employees = new ReadEmployee(database).getEmployees();
 
         for(Employee e : employees){

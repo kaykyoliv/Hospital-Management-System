@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class addNewEmployee implements Option {
 
     @Override
-    public void Operation(Scanner sc, Database database, User user) {
+    public void operation(Scanner sc, Database database, User user) {
         System.out.println("Enter first name: ");
         String firstName = sc.next();
         System.out.println("Enter last name: ");
@@ -58,6 +58,11 @@ public class addNewEmployee implements Option {
             break;
             default:
                 employee = new Employee() {
+                    @Override
+                    public void showList(Scanner sc, Database database) {
+                        System.out.println("Unknown job!");
+                    }
+
                     @Override
                     public int getJob() {
                         return -1;
