@@ -1,5 +1,6 @@
 package model;
 
+import view.ChangePassword;
 import view.EditEmployee;
 import view.addNewEmployee;
 import view.viewEmployee;
@@ -11,7 +12,8 @@ public class Receptionist extends Employee {
         this.options = new Option[]{
                 new addNewEmployee(),
                 new viewEmployee(),
-                new EditEmployee()
+                new EditEmployee(),
+                new ChangePassword()
         };
     }
 

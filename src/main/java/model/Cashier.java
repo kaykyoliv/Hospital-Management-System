@@ -1,10 +1,14 @@
 package model;
 
+import view.ChangePassword;
+
 public class Cashier extends Employee {
 
     public Cashier() {
         super();
-        this.options = new Option[]{};
+        this.options = new Option[]{
+                new ChangePassword()};
+
     }
 
     @Override
