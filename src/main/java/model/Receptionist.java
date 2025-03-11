@@ -11,7 +11,8 @@ public class Receptionist extends Employee {
                 new viewEmployee(),
                 new EditEmployee(),
                 new ChangePassword(),
-                new FireEmployee()
+                new FireEmployee(),
+                new AddNewPatient()
         };
     }
 
