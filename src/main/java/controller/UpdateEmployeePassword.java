@@ -22,7 +22,6 @@ public class UpdateEmployeePassword {
         try{
             int rowsAffected = database.getStatement().executeUpdate(update);
             System.out.println(rowsAffected);
-            System.out.println("DEBUG: " +  u.getPassword());
             updated = true;
         }catch (SQLException e){
             e.printStackTrace();

@@ -1,9 +1,6 @@
 package model;
 
-import view.ChangePassword;
-import view.EditEmployee;
-import view.addNewEmployee;
-import view.viewEmployee;
+import view.*;
 
 public class Receptionist extends Employee {
 
@@ -13,7 +10,8 @@ public class Receptionist extends Employee {
                 new addNewEmployee(),
                 new viewEmployee(),
                 new EditEmployee(),
-                new ChangePassword()
+                new ChangePassword(),
+                new FireEmployee()
         };
     }
 
