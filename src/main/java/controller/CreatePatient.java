@@ -17,7 +17,7 @@ public class CreatePatient {
 
     public boolean isCreated(){
         boolean created = false;
-        String insert = "INSERT INTO patient (first_name, last_name, email, phone_number, password, blood_type) " +
+        String insert = "INSERT INTO patient (first_name, last_name, email, phone_number, password, blood_group) " +
                 "VALUES ('" + patient.getFirstName() + "', '" + patient.getLastName() + "', '" +
                 patient.getEmail() + "', '" + patient.getPhoneNumber() + "', '" +
                 patient.getPassword() + "', '" + patient.getBloodGroup() + "')";
