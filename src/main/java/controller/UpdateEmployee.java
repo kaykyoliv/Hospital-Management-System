@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 public class UpdateEmployee {
 
-    private Database database;
-    private Employee e;
+    private final Database database;
+    private final Employee e;
 
     public UpdateEmployee(Database database, Employee e) {
         this.database = database;
