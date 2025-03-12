@@ -80,4 +80,8 @@ public class User {
         options[select - 1].operation(sc, database, this);
         showList(sc, database);
     }
+
+    public String getName(){
+        return firstName + " " + lastName;
+    }
 }
