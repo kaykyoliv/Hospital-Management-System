@@ -1,5 +1,7 @@
 package model;
 
+import view.ChangePatientPassword;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,7 +15,9 @@ public class Patient extends User {
 
     public Patient() {
         super();
-        this.options = new Option[]{};
+        this.options = new Option[]{
+                new ChangePatientPassword()
+        };
     }
 
     public String getBloodGroup() {

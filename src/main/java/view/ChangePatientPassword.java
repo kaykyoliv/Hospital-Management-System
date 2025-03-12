@@ -1,13 +1,14 @@
 package view;
 
-import controller.UpdateEmployeePassword;
+import controller.UpdatePatientPassword;
 import model.Database;
 import model.Option;
+import model.Patient;
 import model.User;
 
 import java.util.Scanner;
 
-public class ChangePassword implements Option {
+public class ChangePatientPassword implements Option {
     @Override
     public void operation(Scanner sc, Database database, User user) {
         String oldPassword;
@@ -16,18 +17,21 @@ public class ChangePassword implements Option {
             oldPassword = sc.next();
         } while (!oldPassword.equals(user.getPassword()));
 
-        System.out.println("Enter new password: ");
-        String newPassword = sc.next();
+        String newPassword;
         String confirmPassword;
+
+        System.out.println("Enter new password: ");
+        newPassword = sc.next();
 
         do {
             System.out.println("Confirm password: ");
             confirmPassword = sc.next();
-        } while (!newPassword.equals(confirmPassword));
+        } while (!confirmPassword.equals(newPassword));
+
         user.setPassword(newPassword);
 
-        if(new UpdateEmployeePassword(user, database).isUpdated()){
-            System.out.println("Password updated successfully");
+        if(new UpdatePatientPassword((Patient) user, database).isUpdated()){
+            System.out.println("Password changed successfully");
         }
     }
 

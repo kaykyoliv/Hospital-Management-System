@@ -1,23 +1,23 @@
 package controller;
 
 import model.Database;
-import model.User;
+import model.Patient;
 
 import java.sql.SQLException;
 
-public class UpdateEmployeePassword {
+public class UpdatePatientPassword {
 
-    private User u;
-    private Database database;
+    private final Patient p;
+    private final Database database;
 
-    public UpdateEmployeePassword(User u, Database database) {
-        this.u = u;
+    public UpdatePatientPassword(Patient p, Database database) {
+        this.p = p;
         this.database = database;
     }
 
     public boolean isUpdated(){
         boolean updated = false;
-        String update = "UPDATE employee SET password = '" + u.getPassword() + "' WHERE id = " + u.getID();
+        String update = "UPDATE patient SET password = '" + p.getPassword() + "' WHERE id = " + p.getID();
 
         try{
             database.getStatement().executeUpdate(update);
@@ -28,4 +28,5 @@ public class UpdateEmployeePassword {
 
         return updated;
     }
+
 }
