@@ -1,5 +1,7 @@
 package view;
 
+import controller.EmployeeLogin;
+import controller.PatientLogin;
 import model.Database;
 
 import java.util.Scanner;
@@ -13,10 +15,13 @@ public class Login {
         System.out.println("Enter password: ");
         String password = sc.next();
 
-        controller.Login login = new controller.Login(email, password, database);
+        EmployeeLogin login = new EmployeeLogin(email, password, database);
+        PatientLogin patientLogin = new PatientLogin(email, password, database);
         if (login.isLoggedIn()) {
             login.getUser().showList(sc, database);
-        } else {
+        } else if (patientLogin.isLoggedIn()){
+            patientLogin.getPatient().showList(sc, database);
+        } else{
             System.out.println("Wrong email or password");
         }
     }

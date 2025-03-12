@@ -6,14 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class Login {
+public class EmployeeLogin {
 
     private String email;
     private String password;
     private Database database;
     private User u;
 
-    public Login(String email, String password, Database database) {
+    public EmployeeLogin(String email, String password, Database database) {
         this.email = email;
         this.password = password;
         this.database = database;
