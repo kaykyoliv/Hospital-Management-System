@@ -1,8 +1,10 @@
 package view;
 
-import controller.ReadEmployees;
 import controller.ReadPatients;
-import model.*;
+import model.Database;
+import model.Option;
+import model.Patient;
+import model.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
