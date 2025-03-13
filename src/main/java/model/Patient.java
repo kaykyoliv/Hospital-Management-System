@@ -1,10 +1,9 @@
 package model;
 
 import view.ChangePatientPassword;
-import view.ViewPatientData;
+import view.ViewPatientUserData;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Patient extends User {
 
@@ -18,7 +17,7 @@ public class Patient extends User {
         super();
         this.options = new Option[]{
                 new ChangePatientPassword(),
-                new ViewPatientData()
+                new ViewPatientUserData()
         };
     }
 
