@@ -1,9 +1,6 @@
 package model;
 
-import view.AddNewOperation;
-import view.AddNewReport;
-import view.ChangePassword;
-import view.ViewPatientData;
+import view.*;
 
 public class Doctor extends Employee{
 
@@ -13,9 +10,10 @@ public class Doctor extends Employee{
         super();
         this.options = new Option[] {
                 new AddNewOperation(),
-                new ChangePassword(),
                 new AddNewReport(),
-                new ViewPatientData()
+                new ViewPatientData(),
+                new ViewPatientOperations(),
+                new ChangePassword()
         };
     }
 

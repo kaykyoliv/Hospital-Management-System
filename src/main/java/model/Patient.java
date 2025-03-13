@@ -2,22 +2,24 @@ package model;
 
 import view.ChangePatientPassword;
 import view.ViewPatientUserData;
+import view.ViewPatientUserOperations;
 
 import java.util.ArrayList;
 
 public class Patient extends User {
 
     private String bloodGroup;
-    private ArrayList<Operation> operations;
-    private ArrayList<Report> reports;
-    private ArrayList<Operation> unpaidOperations;
-    private ArrayList<Report> unpaidReports;
+ //   private ArrayList<Operation> operations;
+ //   private ArrayList<Report> reports;
+ //   private ArrayList<Operation> unpaidOperations;
+ //   private ArrayList<Report> unpaidReports;
 
     public Patient() {
         super();
         this.options = new Option[]{
                 new ChangePatientPassword(),
-                new ViewPatientUserData()
+                new ViewPatientUserData(),
+                new ViewPatientUserOperations()
         };
     }
 
@@ -29,7 +31,7 @@ public class Patient extends User {
         this.bloodGroup = bloodGroup;
     }
 
-    public ArrayList<Operation> getOperations() {
+/*public ArrayList<Operation> getOperations() {
         return operations;
     }
 
@@ -75,5 +77,5 @@ public class Patient extends User {
 
     public void removeUnpaidReports(Report report) {
         unpaidReports.remove(report);
-    }
+    }*/
 }

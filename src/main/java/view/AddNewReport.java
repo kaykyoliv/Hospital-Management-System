@@ -24,7 +24,8 @@ public class AddNewReport implements Option {
         report.setPatient(new ReadPatient(patientId, database).getPatient());
 
         System.out.println("Enter Date time with format (" + report.getDateTimeFormatter() + "): ");
-        report.setDateTime(sc.next());
+        sc.nextLine();
+        report.setDateTime(sc.nextLine());
 
         System.out.println("Enter diagnosis: ");
         report.setDiagnosis(sc.next());
