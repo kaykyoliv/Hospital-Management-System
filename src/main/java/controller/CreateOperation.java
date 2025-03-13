@@ -21,7 +21,6 @@ public class CreateOperation {
                 "VALUES (" + o.getDoctor().getID() + ", " + o.getPatient().getID() + ", '" + o.getDateTime() + "'" +
                 ", '" + o.isPaid() + "', '" + o.getDiagnosis() + "')";
         try {
-            System.out.println(o.getDateTime());
             database.getStatement().execute(insert);
             created = true;
         } catch (SQLException e) {
