@@ -14,6 +14,7 @@ public class Doctor extends Employee{
                 new ViewPatientData(),
                 new ViewPatientOperations(),
                 new ViewPatientReports(),
+                new ViewDoctorOperations(),
                 new ChangePassword()
         };
     }
