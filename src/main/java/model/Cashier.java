@@ -2,6 +2,7 @@ package model;
 
 import view.AddNewReceipt;
 import view.ChangePassword;
+import view.ViewAllReceipts;
 
 public class Cashier extends Employee {
 
@@ -9,6 +10,7 @@ public class Cashier extends Employee {
         super();
         this.options = new Option[]{
                 new AddNewReceipt(),
+                new ViewAllReceipts(),
                 new ChangePassword()};
 
     }
