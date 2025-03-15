@@ -2,6 +2,7 @@ package model;
 
 import view.*;
 
+import javax.swing.text.View;
 import java.util.ArrayList;
 
 public class Patient extends User {
@@ -20,6 +21,7 @@ public class Patient extends User {
                 new ViewPatientUserOperations(),
                 new ViewPatientUnpaidReport(),
                 new ViewPatientUnpaidOperation(),
+                new ViewUserReceipts(),
                 new ViewPatientUserReports()
         };
     }

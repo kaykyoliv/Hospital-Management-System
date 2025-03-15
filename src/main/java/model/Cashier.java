@@ -1,8 +1,6 @@
 package model;
 
-import view.AddNewReceipt;
-import view.ChangePassword;
-import view.ViewAllReceipts;
+import view.*;
 
 public class Cashier extends Employee {
 
@@ -11,6 +9,8 @@ public class Cashier extends Employee {
         this.options = new Option[]{
                 new AddNewReceipt(),
                 new ViewAllReceipts(),
+                new ViewCashierReceipt(),
+                new ViewPatientsReceipts(),
                 new ChangePassword()};
 
     }

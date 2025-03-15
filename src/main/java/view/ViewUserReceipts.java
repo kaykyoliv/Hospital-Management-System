@@ -1,0 +1,30 @@
+package view;
+
+import controller.ReadCashierReceipt;
+import controller.ReadPatientReceipts;
+import model.*;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ViewUserReceipts implements Option {
+    @Override
+    public void operation(Scanner sc, Database database, User user) {
+        ArrayList<Receipt> receipts = new ReadPatientReceipts((Patient) user, database).getReceipts();
+        System.out.println("-------------------------------");
+        for(Receipt r : receipts){
+            System.out.println("Id: \t\t" + r.getID());
+            System.out.println("Cashier: \t" + r.getCashier().getName());
+            System.out.println("Patient: \t" + r.getPatient().getName());
+            System.out.println("Type: \t\t" + r.getTypeToString());
+            System.out.println("Amount: \t" + r.getAmount());
+            System.out.println("Item id: \t" + r.getTypeID());
+            System.out.println("-------------------------------");
+        }
+    }
+
+    @Override
+    public String getName() {
+        return "View My Receipts";
+    }
+}
