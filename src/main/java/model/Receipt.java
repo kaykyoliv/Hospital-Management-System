@@ -61,4 +61,14 @@ public class Receipt {
     public void setTypeID(int typeID) {
         this.typeID = typeID;
     }
+
+    public String getTypeToString(){
+        if(type == 0){
+            return "Operations";
+        }else if (type == 1){
+            return "Reports";
+        }else{
+            return null;
+        }
+    }
 }

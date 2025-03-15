@@ -1,9 +1,6 @@
 package model;
 
-import view.ChangePatientPassword;
-import view.ViewPatientUserData;
-import view.ViewPatientUserOperations;
-import view.ViewPatientUserReports;
+import view.*;
 
 import java.util.ArrayList;
 
@@ -21,6 +18,8 @@ public class Patient extends User {
                 new ChangePatientPassword(),
                 new ViewPatientUserData(),
                 new ViewPatientUserOperations(),
+                new ViewPatientUnpaidReport(),
+                new ViewPatientUnpaidOperation(),
                 new ViewPatientUserReports()
         };
     }
