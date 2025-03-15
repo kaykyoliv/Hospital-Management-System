@@ -13,6 +13,7 @@ public class Doctor extends Employee{
                 new AddNewReport(),
                 new ViewPatientData(),
                 new ViewPatientOperations(),
+                new ViewPatientReports(),
                 new ChangePassword()
         };
     }

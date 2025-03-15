@@ -3,6 +3,7 @@ package model;
 import view.ChangePatientPassword;
 import view.ViewPatientUserData;
 import view.ViewPatientUserOperations;
+import view.ViewPatientUserReports;
 
 import java.util.ArrayList;
 
@@ -19,7 +20,8 @@ public class Patient extends User {
         this.options = new Option[]{
                 new ChangePatientPassword(),
                 new ViewPatientUserData(),
-                new ViewPatientUserOperations()
+                new ViewPatientUserOperations(),
+                new ViewPatientUserReports()
         };
     }
 
