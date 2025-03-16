@@ -6,12 +6,13 @@ import model.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ViewPatientUnpaidOperation implements Option {
+public class ViewPatientPaidOperations implements Option {
     @Override
     public void operation(Scanner sc, Database database, User user) {
         ArrayList<Operation> operations = new ReadPatientOperations((Patient) user, database).getOperations();
 
-        operations.removeIf(Operation::isPaid);
+        operations.removeIf(o -> !o.isPaid());
+
         System.out.println("---------------------------------------");
         for(Operation o : operations){
 
@@ -28,6 +29,6 @@ public class ViewPatientUnpaidOperation implements Option {
 
     @Override
     public String getName() {
-        return "View My Unpaid Operations";
+        return "View My Paid Operations";
     }
 }
