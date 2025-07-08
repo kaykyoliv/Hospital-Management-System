@@ -1,4 +1,4 @@
-package com.kayky.domain;
+package com.kayky.domain.user.model;
 
 
 import jakarta.persistence.*;

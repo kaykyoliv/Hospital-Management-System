@@ -1,5 +1,6 @@
-package com.kayky.domain;
+package com.kayky.domain.patient.model;
 
+import com.kayky.domain.user.model.User;
 import com.kayky.enums.Gender;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
