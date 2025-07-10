@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
+@Table(name = "tb_user")
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
